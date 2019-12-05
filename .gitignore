@@ -1,0 +1,9 @@
+*.md
+*.db
+*.log
+
+*.iml
+.idea/
+/bin
+out/
+target/
