@@ -6,4 +6,10 @@
 .idea/
 /bin
 out/
+
+*.class
+*.jar
+*.war
+*.ear
 target/
+test-output/
