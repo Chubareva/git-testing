@@ -24,8 +24,8 @@ public class RentPage extends AbstractPage{
     }
 
 
-
-    public MainPage openPage() {
+    @Override
+    public by.bsu.page.RentPage openPage() {
         driver.navigate().to(RENTPAGE_URL);
         LOGGER.info("Rent page opened");
         return this;
@@ -44,15 +44,12 @@ public class RentPage extends AbstractPage{
     private WebElement viewButton;
 
 
-    public RentPage fillFromParams(Vaucher params) {
-        params.getVaucherNumber().ifPresent(this::inputVaucherNamber);
-        params.getSurname().ifPresent(this:: inputSurname);
-        params.getName().ifPresent(this:: inputName);
+    public by.bsu.page.RentPage fillFromParams(Vaucher params) {
         LOGGER.info("Filled vauchers");
         return this;
     }
 
-    public RentPage inputVaucherNamber(String pickUpVauchernumber) {
+    public by.bsu.page.RentPage inputVaucherNamber(String pickUpVauchernumber) {
         vaucherNumber.click();
         vaucherNumber.clear();
         vaucherNumber.sendKeys(pickUpVauchernumber);
@@ -60,7 +57,7 @@ public class RentPage extends AbstractPage{
         LOGGER.info("Filled 'input vaucher number' field with " + pickUpVauchernumber);
         return this;
     }
-    public RentPage inputSurname(String pickUpSurname) {
+    public by.bsu.page.RentPage inputSurname(String pickUpSurname) {
         surname.click();
         surname.clear();
         surname.sendKeys(pickUpSurname);
@@ -69,7 +66,7 @@ public class RentPage extends AbstractPage{
         return this;
     }
 
-    public RentPage inputName(String pickUpName) {
+    public by.bsu.page.RentPage inputName(String pickUpName) {
         name.click();
         name.clear();
         name.sendKeys(pickUpName);
