@@ -10,14 +10,18 @@ public class Car {
     private String cityFrom;
     private String placeFrom;
     private String carTo;
-    private LocalDateTime takeTime;
-    private LocalDateTime delivaryTime;
-    private LocalDateTime takeDate;
-    private LocalDateTime delivaryDate;
+    private String takeTime;
+    private String delivaryTime;
+    private String takeDate;
+    private DeliveryDate delivaryDate;
 
 
+    public Car(String carFrom, String cityFrom) {
+        this.carFrom = carFrom;
+        this.cityFrom = cityFrom;
+    }
 
-    public Car(String carFrom, String placeFrom,String cityFrom,String carTo,LocalDateTime takeTime , LocalDateTime delivaryTime,LocalDateTime takeDate , LocalDateTime delivaryDate  ) {
+    public Car(String testData, String data, String s, String testData1, String data1) {
         this.carFrom = carFrom;
         this.carTo = carTo;
         this.takeTime = takeTime;
@@ -27,68 +31,82 @@ public class Car {
         this.placeFrom=placeFrom;
         this.cityFrom=cityFrom;
     }
-    public Car(String carFrom,String cityFrom,String placeFrom){
+    public Car(String carFrom, String cityFrom, String testData, String data, String s, String testData1, String data1){
         this.carFrom=carFrom;
         this.cityFrom=cityFrom;
         this.placeFrom=placeFrom;
+    }
+
+    public Car(){
+
     }
 
     public String getCarFrom() {
         return carFrom;
     }
 
-    public void setCarFrom(String carFrom) {
+    public Car setCarFrom(String carFrom) {
         this.carFrom = carFrom;
+        return  this;
     }
 
     public String getCarTo() {
         return carTo;
     }
-    public void setCarTo(String carTo) {
+    public Car setCarTo(String carTo) {
         this.carTo = carTo;
+        return this;
     }
 
 
     public String getPlaceFrom() {
         return placeFrom;
     }
-    public void setPlaceFrom(String placeFrom){this.placeFrom=placeFrom;}
+    public Car setPlaceFrom(String placeFrom){this.placeFrom=placeFrom;
+        return this;}
 
     public String  getCityFrom() {
         return cityFrom;
     }
-    public void setCityFrom(String cityFrom) { this.cityFrom=cityFrom; }
+    public Car setCityFrom(String cityFrom) { this.cityFrom=cityFrom;
+        return this;}
 
-    public LocalDateTime getTakeTime() {
+    public String getTakeTime() {
         return takeTime;
     }
 
-    public void setTakeTime(LocalDateTime takeTime) {
+    public Car setTakeTime(String takeTime) {
         this.takeTime = takeTime;
+        return this;
     }
 
-    public LocalDateTime getDelivaryTime() {
+    public String getDelivaryTime() {
         return delivaryTime;
     }
 
-    public void setDelivaryDate(LocalDateTime delivaryDate) {
+    public Car setDelivaryDate(DeliveryDate delivaryDate) {
         this.delivaryDate = delivaryDate;
+        return this;
     }
-    public LocalDateTime getTakeDate() {
+    public String getTakeDate() {
         return takeDate;
     }
 
-    public void setTakeDate(LocalDateTime takeDate) {
+    public Car setTakeDate(String takeDate) {
         this.takeDate = takeDate;
+        return this;
     }
 
-    public LocalDateTime getDelivaryDate() {
+    public DeliveryDate getDelivaryDate() {
         return delivaryDate;
     }
 
-    public void setDelivaryTime(LocalDateTime delivaryDate) {
+    public Car setDelivaryTime(DeliveryDate delivaryDate) {
         this.delivaryDate = delivaryDate;
+        return this;
     }
+
+
 
 
     @Override

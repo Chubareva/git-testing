@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 
@@ -23,7 +24,7 @@ public class MainPage extends AbstractPage {
         wait = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS);
     }
 
-    public RentPage openPage() {
+    public MainPage openPage() {
         driver.navigate().to(MAINPAGE_URL);
         LOGGER.info("Home page opened");
         return this;
@@ -96,7 +97,7 @@ public class MainPage extends AbstractPage {
     public MainPage fillFromParams(Car params) {
         params.getCarFrom().ifPresent(this::inputCarFrom);
         params.getCityFrom().ifPresent(this:: inputCityFrom);
-            params.getPlaceFrom().ifPresent(this:: inputPlaceFrom);
+        params.getPlaceFrom().ifPresent(this:: inputPlaceFrom);
         params.getTakeTime().ifPresent(this:: inputTakeTime);
         params.getTakeDate().ifPresent(this:: inputTakeDate);
         params.getDelivaryTime().ifPresent(this:: inputDelivaryTime);
@@ -104,6 +105,7 @@ public class MainPage extends AbstractPage {
         LOGGER.info("Filled cars");
         return this;
     }
+
 
     public MainPage inputCarFrom(String pickUpCarFrom) {
         carFromInput.click();

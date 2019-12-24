@@ -15,24 +15,27 @@ public class Vaucher {
         return name;
     }
 
-    public void setName(String name) {
+    public Vaucher setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
+    public Vaucher setSurname(String surname) {
         this.surname = surname;
+        return this;
     }
 
     public String getVaucherNumber() {
         return vaucherNumber;
     }
 
-    public void setVaucherNumber(String vaucherNumber) {
+    public Vaucher setVaucherNumber(String vaucherNumber) {
         this.vaucherNumber = vaucherNumber;
+        return this;
     }
 
     @Override

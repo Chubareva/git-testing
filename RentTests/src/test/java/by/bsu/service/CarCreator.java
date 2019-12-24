@@ -1,6 +1,6 @@
 package by.bsu.service;
 import by.bsu.model.Car;
-import by.bsu.model.Vaucher;
+import by.bsu.model.DeliveryDate;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -43,14 +43,14 @@ public class CarCreator {
                 .setCarFrom(TestDataReader.getTestData(TESTDATA_CAR_CARFROM))
                 .setCityFrom(TestDataReader.getTestData(TESTDATA_CAR_CITYFROM))
                 .setPlaceFrom(TestDataReader.getTestData(TESTDATA_CAR_PLACEFROM))
-                .setDeliveryDate(new DeliveryDate(
+                .setDelivaryDate(new DeliveryDate(
                         getDateStringWithPlusDays(TESTDATA_CAR_TAKE_DATE),
                         getDateStringWithPlusDays(TESTDATA_CAR_DELIVARY_DATE)));
     }
+
     public static Car withPickUpPlace() {
         return new Car(TestDataReader.getTestData(TESTDATA_CAR_CARFROM), TestDataReader.getTestData(TESTDATA_CAR_CITYFROM));
     }
-
     public static Car withouDelivaryDT(){
         return new Car(TestDataReader.getTestData(TESTDATA_CAR_CARFROM), TestDataReader.getTestData(TESTDATA_CAR_CITYFROM),
                 TestDataReader.getTestData(TESTDATA_CAR_PLACEFROM), TestDataReader.getTestData(TESTDATA_CAR_TAKE_TIME),
