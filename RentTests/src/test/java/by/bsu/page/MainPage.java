@@ -26,7 +26,7 @@ public class MainPage extends AbstractPage {
     }
 
     public MainPage openPage() {
-        driver.navigate().to(MAINPAGE_URL);
+        driver.get(MAINPAGE_URL);
         LOGGER.info("Home page opened");
         return this;
     }
@@ -84,6 +84,12 @@ public class MainPage extends AbstractPage {
     private WebElement password;
     @FindBy(xpath = "//*[@id=\"account_login_button\"]")
     private WebElement buttonUserSubmit;
+    @FindBy(xpath = "//*[@id=\"secnav__country\"]")
+    private WebElement languageButton;
+    @FindBy(xpath = " //*[@id=\"sitepicker\"]/div[3]/div[3]/dl[2]/dd/dl/a[1]")
+    private WebElement chinaButton;
+    @FindBy(xpath = " //*[@id=\"secnav__country\"]/div/li/span")
+    private WebElement lang;
 
 
     public void search() {
@@ -185,5 +191,19 @@ public class MainPage extends AbstractPage {
     public String getLoggedInUserName(){
         return "";
 
+    }
+
+    public MainPage changeLanguage(){
+        languageButton.click();
+        chinaButton.click();
+        return this;
+    }
+
+    public String getUrl(){
+        return driver.getCurrentUrl();
+    }
+
+    public String getLang(){
+        return lang.getText();
     }
 }

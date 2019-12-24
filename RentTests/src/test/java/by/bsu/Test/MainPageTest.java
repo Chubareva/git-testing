@@ -18,6 +18,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 public class MainPageTest extends CommonConditions{
+    public String EXPECTED_URL= "UNITED STATES";
 //    @Test
 //    public void oneCanLogin()
 //    {
@@ -38,6 +39,15 @@ public class MainPageTest extends CommonConditions{
 //                .getLoggedInUserName();
 //        assertThat(vaucherinfo, is(""));
 //    }
+
+    @Test
+    public void searchRentingFromVaucher()
+    {
+        MainPage page = new MainPage(driver)
+                .openPage()
+                .changeLanguage();
+        Assert.assertEquals(page.getLang(), EXPECTED_URL);
+    }
 //    @Test
 //    public void searchCityWithoutCondtition()
 //    {
