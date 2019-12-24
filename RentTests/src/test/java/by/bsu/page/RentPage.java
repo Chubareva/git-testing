@@ -25,7 +25,7 @@ public class RentPage extends AbstractPage{
 
 
 
-    public MainPage openPage() {
+    public RentPage openPage() {
         driver.navigate().to(RENTPAGE_URL);
         LOGGER.info("Rent page opened");
         return this;

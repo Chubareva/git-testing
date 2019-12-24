@@ -1,6 +1,5 @@
 package by.bsu.page;
 import by.bsu.model.Car;
-import by.bsu.page.AbstractPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -24,7 +23,7 @@ public class MainPage extends AbstractPage {
         wait = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS);
     }
 
-    public MainPage openPage() {
+    public RentPage openPage() {
         driver.navigate().to(MAINPAGE_URL);
         LOGGER.info("Home page opened");
         return this;
