@@ -18,7 +18,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 public class MainPageTest extends CommonConditions{
-    public String EXPECTED_URL= "UNITED STATES";
+    public String EXPECTED_LANG= "UNITED STATES";
+    public String EXPECTED_URL= "https://www.autoeurope.ru/my-booking/";
 //    @Test
 //    public void oneCanLogin()
 //    {
@@ -46,8 +47,18 @@ public class MainPageTest extends CommonConditions{
         MainPage page = new MainPage(driver)
                 .openPage()
                 .changeLanguage();
-        Assert.assertEquals(page.getLang(), EXPECTED_URL);
+        Assert.assertEquals(page.getLang(), EXPECTED_LANG);
     }
+
+    @Test
+    public void clickPartnersTest()
+    {
+        MainPage page = new MainPage(driver)
+                .openPage()
+                .clickPartners();
+        Assert.assertEquals(page.getUrl(), EXPECTED_URL);
+    }
+
 //    @Test
 //    public void searchCityWithoutCondtition()
 //    {

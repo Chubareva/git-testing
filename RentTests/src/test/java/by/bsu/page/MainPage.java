@@ -78,6 +78,10 @@ public class MainPage extends AbstractPage {
     @FindBy(xpath = "//input[@value='Sign in']")
     private WebElement buttonSubmit;
 
+    @FindBy(xpath = "//*[@id=\"nav\"]/a")
+    private WebElement partnersButton;
+
+
     @FindBy(xpath = "//*[@id=\"account_login_form\"]/div[3]")
     private WebElement email;
     @FindBy(xpath = "//*[@id=\"account_login_form\"]/div[4]")
@@ -205,5 +209,10 @@ public class MainPage extends AbstractPage {
 
     public String getLang(){
         return lang.getText();
+    }
+
+    public MainPage clickPartners(){
+        partnersButton.click();
+        return this;
     }
 }
